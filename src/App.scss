@@ -124,3 +124,14 @@ body {
     display: inline-block;
   }
 }
+
+.word-folder {
+  background: url('imgs/folder.svg');
+  background-size: 100%;
+  border-color: #767676;
+  height: 500px;
+  background-repeat: no-repeat;
+  h2 {
+    font-size: 3rem;
+  }
+}

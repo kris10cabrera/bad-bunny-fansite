@@ -3,7 +3,6 @@ import data from '../yhlqmdlg.json';
 import '../App.scss';
 import Word from './Word';
 import Intro from './Intro';
-import Draggable from 'react-draggable';
 
 class App extends React.Component {
   state = {
@@ -141,7 +140,7 @@ class App extends React.Component {
           <div className="footer-text-wrapper">
           <div className="footer-text">
                 <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
-                lyrics belong to Bad Bunny. Images belong to Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.
+                <p>lyrics belong to Bad Bunny. Images belong to Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
               </div>
               <h3 className="bt">how?</h3>
               <p className="cl">

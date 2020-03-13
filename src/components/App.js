@@ -24,6 +24,7 @@ class App extends React.Component {
       let wordArray = [];
       Object.keys(data.songs).map(function (key) {
         words += data.songs[key].lyrics.replace(/[.,\/\d+#!¡?¿f$%\^&\*;:{}=\-_`~()]/g, "").toLowerCase();
+        return;
       })
 
       wordArray = words.split(' ').filter(word => word.length > 2);
@@ -117,14 +118,22 @@ class App extends React.Component {
         <img className="logo" src="bunny.svg" alt="Bad Bunny logo" />
         <section className="page-wrapper">
           <section className="left">
-            <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. Photo source: Spotify" />
+            <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. source: Spotify" />
+
+            <div className="footer cr">
+              <div className="footer-text">
+                <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a>.</h2>
+              this is a fan site. lyrics belong to Bad Bunny.
+              </div>
+            </div>
           </section>
           <section className="right">
             <Intro ted={data} />
-            {Object.keys(data).map(key =>
-              <Word key={key} index={key} title={data[key].key} data={data} times={data[key].value} songs={data[key].songIds} />
-            )}
-
+            <section className="folder-wrapper">
+              {Object.keys(data).map(function (key, index) {
+                return <Word key={key} index={index * 25} title={data[key].key} times={data[key].value} songs={data[key].songIds} />;
+              })}
+            </section>
           </section>
         </section>
       </>

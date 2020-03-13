@@ -222,12 +222,13 @@ body {
 }
 
 .wrapper {
-  margin: 200px 50px 50px ;
+  margin: 44px 50px 50px ;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
   img {
     max-width: 400px;
+    margin-top: 100px;
   }
 }
 
@@ -251,5 +252,10 @@ body {
   p {
     font-size: 23px;
     line-height: 1.2;
+  }
+
+  a:hover {
+    background: black;
+    color: white;
   }
 }

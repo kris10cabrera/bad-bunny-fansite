@@ -6,10 +6,8 @@ import Intro from './Intro';
 import Draggable from 'react-draggable';
 
 class App extends React.Component {
-
   state = {
     data: data,
-    language: 'English'
   }
 
   componentDidMount() {
@@ -124,23 +122,9 @@ class App extends React.Component {
     const { data } = this.state;
     return (
       <>
-        <nav id="language">
-          <ul>
-            <li><abbr onClick={this.handleClick} lang="en" title="English">English</abbr></li>
-            <li><abbr onClick={this.handleClick} lang="es" tite="Español">Español</abbr></li>
-          </ul>
-        </nav>
         <section className="page-wrapper">
           <section className="left">
             <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. source: Spotify" />
-
-            <div className="footer cr">
-              <div className="footer-text">
-                <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
-              this is a fan site. lyrics belong to Bad Bunny.
-              </div>
-            </div>
-
           </section>
           <section className="right">
             <Intro ted={data} />
@@ -153,7 +137,19 @@ class App extends React.Component {
         </section>
 
         <section className="wrapper">
-          <h2 className="bt">What is this? </h2>
+        <div className="footer cr">
+          <div className="footer-text-wrapper">
+          <div className="footer-text">
+                <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+                lyrics belong to Bad Bunny. Images belong to Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.
+              </div>
+              <h3 className="bt">how?</h3>
+              <p className="cl">
+              built using React. I fed the app a JSON file with the lyrics copied & pasted from Genius. I then built a few functions to count each unique word, check for the most frequent words, identify the songs those words are featured on, and return it. here I highlighted some of my favorites. 
+              </p>
+          </div>
+            </div>
+            <img src="stillz-bb.png" alt="Bad Bunny polaroid. credit to Stillz" />
         </section>
       </>
     )

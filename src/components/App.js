@@ -3,11 +3,13 @@ import data from '../yhlqmdlg.json';
 import '../App.scss';
 import Word from './Word';
 import Intro from './Intro';
+import Draggable from 'react-draggable';
 
 class App extends React.Component {
 
   state = {
-    data: data
+    data: data,
+    language: 'English'
   }
 
   componentDidMount() {
@@ -110,31 +112,48 @@ class App extends React.Component {
       data: newData
     })
   }
+  handleClick = (e, data) => {
+    this.setState({
+      language: 'Spanish'
+    })
+  }
 
   render() {
+
+
     const { data } = this.state;
     return (
       <>
-        <img className="logo" src="bunny.svg" alt="Bad Bunny logo" />
+        <nav id="language">
+          <ul>
+            <li><abbr onClick={this.handleClick} lang="en" title="English">English</abbr></li>
+            <li><abbr onClick={this.handleClick} lang="es" tite="Español">Español</abbr></li>
+          </ul>
+        </nav>
         <section className="page-wrapper">
           <section className="left">
             <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. source: Spotify" />
 
             <div className="footer cr">
               <div className="footer-text">
-                <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a>.</h2>
+                <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
               this is a fan site. lyrics belong to Bad Bunny.
               </div>
             </div>
+
           </section>
           <section className="right">
             <Intro ted={data} />
             <section className="folder-wrapper">
               {Object.keys(data).map(function (key, index) {
-                return <Word key={key} index={index * 25} title={data[key].key} times={data[key].value} songs={data[key].songIds} />;
+                return <Word key={key} index={index * 35} title={data[key].key} times={data[key].value} songs={data[key].songIds} />;
               })}
             </section>
           </section>
+        </section>
+
+        <section className="wrapper">
+          <h2 className="bt">What is this? </h2>
         </section>
       </>
     )

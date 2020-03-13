@@ -57,6 +57,22 @@ a {
   color: inherit;
 }
 
+
+#language {
+  ul {
+    display: flex;
+    flex-direction: row;
+    background: black;
+    color: white;
+    font-size: 40px;
+    justify-content: space-between;
+  }
+
+  abbr {
+    cursor: pointer;
+  }
+}
+
 $bg-color: #DDD8F4;
 
 
@@ -127,6 +143,7 @@ body {
     max-width: 420px;
   }
 }
+
 .intro {
   font-size: 58px;
   max-width: 900px;
@@ -143,6 +160,12 @@ body {
       margin-right: -20px;
     }
   }
+
+}
+
+.intro::selection {
+  background: black;
+  color: white;
 }
 
 .folder-wrapper {
@@ -195,10 +218,19 @@ body {
 }
 
 .footer {
-  background: url('imgs/name.svg');
-  background-size: contain;
+  border: 1px solid;
   border-color: #767676;
-  height: 349px;
-  background-repeat: no-repeat;
-  
+  background: #fff;
+  padding: 20px;
 }
+
+.react-draggable-dragging {
+  filter: drop-shadow(rgb(0, 255, 31) 2px 4px 6px);
+}
+
+.wrapper {
+  margin: 50px;
+
+
+}
+

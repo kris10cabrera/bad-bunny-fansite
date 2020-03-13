@@ -6,11 +6,16 @@ import Intro from './Intro';
 import Draggable from 'react-draggable';
 
 class App extends React.Component {
-
   state = {
     data: data,
     language: 'English'
   }
+  changeLanguage = (language) => {
+    this.setState({
+      language: language
+    })
+  }
+
 
   componentDidMount() {
     const selectedWords = [103, 102, 101, 99, 98, 59, 50, 38, 29, 8];
@@ -112,11 +117,6 @@ class App extends React.Component {
       data: newData
     })
   }
-  handleClick = (e, data) => {
-    this.setState({
-      language: 'Spanish'
-    })
-  }
 
   render() {
 
@@ -126,8 +126,8 @@ class App extends React.Component {
       <>
         <nav id="language">
           <ul>
-            <li><abbr onClick={this.handleClick} lang="en" title="English">English</abbr></li>
-            <li><abbr onClick={this.handleClick} lang="es" tite="Español">Español</abbr></li>
+            <li><abbr className={this.state.language == 'English' && 'dotted'} onClick={() => this.changeLanguage('English')} lang="en" title="English">English</abbr></li>
+            <li><abbr className={this.state.language == 'Español' && 'dotted'} onClick={() => this.changeLanguage('Español')} lang="es" title="Español">Español</abbr></li>
           </ul>
         </nav>
         <section className="page-wrapper">
@@ -136,8 +136,10 @@ class App extends React.Component {
 
             <div className="footer cr">
               <div className="footer-text">
+                
                 <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
               this is a fan site. lyrics belong to Bad Bunny.
+
               </div>
             </div>
 

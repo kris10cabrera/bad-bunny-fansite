@@ -10,7 +10,6 @@ class Word extends React.Component {
     var styles = {
       left: `${index}px`,
       top: `${index}px`,
-      // filter: 'drop-shadow(rgb(0, 26, 255) 2px 4px 6px)',
     };
 
     return (

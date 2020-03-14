@@ -155,12 +155,35 @@ body {
   }
 
   h1 {
+    position: relative;
     .cli {
       margin-left: -20px;
       margin-right: -20px;
     }
   }
 
+  p.cli {
+    font-size: 15px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+.info-bubble {
+  max-width: 650px;
+  border: 1px solid black;
+  padding: 5px 5px 10px;
+  background: white;
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  p {
+    font-size: 20px;
+    font-family: 'Compagnon Light Italic';
+  }
 }
 
 .intro::selection {
@@ -209,6 +232,23 @@ body {
 
   li {
     font-size: 18px;
+  }
+
+  @media(max-width: 1050px) {
+    height: 249px;
+    width: 330px;
+
+    h3 {
+      font-size: 30px;
+    }
+
+    li {
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 19px;
+    }
   }
 }
 

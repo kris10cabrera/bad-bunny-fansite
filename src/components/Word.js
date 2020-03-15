@@ -24,9 +24,9 @@ class Word extends React.Component {
           <h2 className="cr">{title}</h2>
           <div className="text-wrapper">
             <div className="title">
-              <p>{language == 'English' ? 'is said' : 'es dicho'}</p><h3 className="bt">{times} {language == 'English' ? 'times' : 'veces'}</h3>
+              <p>{language === 'English' ? 'is said' : 'es dicho'}</p><h3 className="bt">{times} {language === 'English' ? 'times' : 'veces'}</h3>
             </div>
-            <p className="appear" >{language == 'English' ? 'appears on' : 'aparece en'}:</p>
+            <p className="appear" >{language === 'English' ? 'appears on' : 'aparece en'}:</p>
             <ul>
               {songs && Object.keys(songs).map(key =>
                 <li key={key} className="cr">

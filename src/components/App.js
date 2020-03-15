@@ -126,14 +126,17 @@ class App extends React.Component {
       <>
         <nav id="language">
           <ul>
-            <li><abbr className={language == 'English' && 'dotted'} onClick={() => this.changeLanguage('English')} lang="en" title="English">English</abbr></li>
-            <li><abbr className={language == 'Español' && 'dotted'} onClick={() => this.changeLanguage('Español')} lang="es" title="Español">Español</abbr></li>
+            <li><abbr className={language === 'English' && 'dotted'} onClick={() => this.changeLanguage('English')} lang="en" title="English">English</abbr></li>
+            <li><abbr className={language === 'Español' && 'dotted'} onClick={() => this.changeLanguage('Español')} lang="es" title="Español">Español</abbr></li>
           </ul>
         </nav>
         <section className="page-wrapper">
           <section className="left">
             <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. source: Spotify" />
-
+            <div className="footer-text footer-text-left">
+                <h2><span className="cli">{language === 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+                <p>{language === 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
+              </div>
           </section>
           <section className="right">
             <Intro text={text} language={language} />
@@ -148,13 +151,13 @@ class App extends React.Component {
         <section className="wrapper">
         <div className="footer cr">
           <div className="footer-text-wrapper">
-          <div className="footer-text">
-                <h2><span className="cli">{language == 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
-                <p>{language == 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
+          <div className="footer-text footer-text-right">
+                <h2><span className="cli">{language === 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+                <p>{language === 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
               </div>
-            <h3 className="bt">{language == 'English' ? 'how?' : '¿cómo?'}</h3>
+            <h3 className="bt">{language === 'English' ? 'how?' : '¿cómo?'}</h3>
               <p className="cl">
-              {language == 'English' ? text.text[5].en : text.text[5].es }
+              {language === 'English' ? text.text[5].en : text.text[5].es }
               </p>
           </div>
             </div>

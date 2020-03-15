@@ -1,5 +1,6 @@
 import React from 'react';
 import data from '../yhlqmdlg.json';
+import text from '../text.json'
 import '../App.scss';
 import Word from './Word';
 import Intro from './Intro';
@@ -8,7 +9,8 @@ import Draggable from 'react-draggable';
 class App extends React.Component {
   state = {
     data: data,
-    language: 'English'
+    language: 'English',
+    text: {...text}
   }
   changeLanguage = (language) => {
     this.setState({
@@ -121,13 +123,13 @@ class App extends React.Component {
   render() {
 
 
-    const { data } = this.state;
+    const { data, language, text } = this.state;
     return (
       <>
         <nav id="language">
           <ul>
-            <li><abbr className={this.state.language == 'English' && 'dotted'} onClick={() => this.changeLanguage('English')} lang="en" title="English">English</abbr></li>
-            <li><abbr className={this.state.language == 'Español' && 'dotted'} onClick={() => this.changeLanguage('Español')} lang="es" title="Español">Español</abbr></li>
+            <li><abbr className={language == 'English' && 'dotted'} onClick={() => this.changeLanguage('English')} lang="en" title="English">English</abbr></li>
+            <li><abbr className={language == 'Español' && 'dotted'} onClick={() => this.changeLanguage('Español')} lang="es" title="Español">Español</abbr></li>
           </ul>
         </nav>
         <section className="page-wrapper">
@@ -137,7 +139,7 @@ class App extends React.Component {
             <div className="footer cr">
               <div className="footer-text">
                 
-                <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+                <h2><span className="cli">{language == 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
               this is a fan site. lyrics belong to Bad Bunny.
 
               </div>
@@ -145,7 +147,7 @@ class App extends React.Component {
 
           </section>
           <section className="right">
-            <Intro ted={data} />
+            <Intro text={text} language={language} />
             <section className="folder-wrapper">
               {Object.keys(data).map(function (key, index) {
                 return <Word key={key} index={index * 35} title={data[key].key} times={data[key].value} songs={data[key].songIds} />;

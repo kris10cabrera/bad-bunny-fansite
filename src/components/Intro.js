@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Intro = () => (
+const Intro = ({text, language}) => (
   <div className="intro">
-      <span className="cr">I taught my computer to count the words on</span>
+      <span className="cr">{language == 'English' ? text.text[0].en : text.text[0].es}</span>
       <h1>
-      <span className="br">YHLQMDLG</span> <span className="cli">by</span> <span className="br">Bad Bunny </span>
+      <span className="br">YHLQMDLG</span> <span className="cli">{language == 'English' ? text.text[1].en : text.text[1].es}</span> <span className="br">Bad Bunny </span>
     </h1>
-    <p className="cl">here are some of my findings:</p>
+    <p className="cl">{language == 'English' ? text.text[2].en : text.text[2].es}:</p>
     
   </div>
 )

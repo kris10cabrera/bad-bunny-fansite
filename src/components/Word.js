@@ -13,7 +13,8 @@ class Word extends React.Component {
     };
 
     var mobileStyles = {
-      top: `${index}px`,
+      top: `${index / 4}px`,
+      left:`${index}px`,
     };
 
     return (

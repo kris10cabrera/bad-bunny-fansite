@@ -142,7 +142,7 @@ class App extends React.Component {
             <Intro text={text} language={language} />
             <section className="folder-wrapper">
               {Object.keys(data).map(function (key, index) {
-                return <Word key={key} index={screenWidth > 1300 ? index * 35 : index * -2} language={language} title={data[key].key} times={data[key].value} songs={data[key].songIds} screenWidth={screenWidth}/>;
+                return <Word key={key} index={screenWidth > 1300 ? index * 35 : index * 11} language={language} title={data[key].key} times={data[key].value} songs={data[key].songIds} screenWidth={screenWidth}/>;
               })}
             </section>
           </section>
@@ -162,6 +162,7 @@ class App extends React.Component {
           </div>
             </div>
             <img src="stillz-bb.png" alt="Bad Bunny polaroid. credit to Stillz" />
+            <p className="vg closer">{language === 'English' ? 'listen to' : 'eschucha a'} YHLQMDLG on <a href="https://open.spotify.com/album/5lJqux7orBlA1QzyiBGti1">Spotify</a>, <a href="https://music.apple.com/us/album/yhlqmdlg/1500776322?ls=1">Apple Music</a>, <a href="https://www.youtube.com/playlist?list=PLRW7iEDD9RDS2irjCFJo7dkcswBaJZXGG">YouTube</a>, <a href="https://tidal.com/browse/album/132672298">Tidal</a> 🖤</p>
         </section>
         
       </>

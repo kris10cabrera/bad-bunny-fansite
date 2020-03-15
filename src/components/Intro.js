@@ -13,7 +13,7 @@ class Intro extends React.Component {
 
 
   render() {
-    const ({text, language}) = this.props;
+    const {text, language} = this.props;
     return (
       <div className="intro">
         <span className="cr">{language == 'English' ? text.text[0].en : text.text[0].es}</span>

@@ -134,20 +134,12 @@ class App extends React.Component {
           <section className="left">
             <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. source: Spotify" />
 
-            <div className="footer cr">
-              <div className="footer-text">
-                
-                <h2><span className="cli">{language == 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
-              this is a fan site. lyrics belong to Bad Bunny.
-
-              </div>
-            </div>
           </section>
           <section className="right">
             <Intro text={text} language={language} />
             <section className="folder-wrapper">
               {Object.keys(data).map(function (key, index) {
-                return <Word key={key} index={screenWidth > 1300 ? index * 35 : index * -2} title={data[key].key} times={data[key].value} songs={data[key].songIds} screenWidth={screenWidth}/>;
+                return <Word key={key} index={screenWidth > 1300 ? index * 35 : index * -2} language={language} title={data[key].key} times={data[key].value} songs={data[key].songIds} screenWidth={screenWidth}/>;
               })}
             </section>
           </section>
@@ -157,12 +149,12 @@ class App extends React.Component {
         <div className="footer cr">
           <div className="footer-text-wrapper">
           <div className="footer-text">
-                <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
-                <p>lyrics belong to Bad Bunny. Images belong to Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
+                <h2><span className="cli">{language == 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+                <p>{language == 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
               </div>
-              <h3 className="bt">how?</h3>
+            <h3 className="bt">{language == 'English' ? 'how?' : '¿cómo?'}</h3>
               <p className="cl">
-                this site is built with React. I fed the app a JSON file (lyrics copied & pasted from Genius). I then built a few functions that count each unique word, check for the most frequent words, and identify the songs those words are featured on. highlighted here are some of my favorites. 
+              {language == 'English' ? text.text[5].en : text.text[5].es }
               </p>
           </div>
             </div>

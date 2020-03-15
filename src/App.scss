@@ -127,6 +127,15 @@ html {
   font-family: 'Compagnon Light';
 }
 
+@font-face { 
+  font-family: 'VG5000';
+  src: url('./fonts/VG5000-regular.otf');
+}
+
+.vg {
+  font-family: 'VG5000' !important;
+}
+
 body {
   font-family: 'Compagnon Light';
 }
@@ -142,11 +151,24 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-column-gap: 40px;
+
+  @media(max-width: 1000px) {
+    margin: 10px 20px;
+      grid-template-columns: 1fr 3fr;
+  }
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .left {
   .bad-bunny {
     max-width: 420px;
+    @media(max-width: 1000px) {
+      max-width: 220px;
+  }
   }
 }
 
@@ -176,19 +198,48 @@ body {
     text-decoration: none;
   }
 
+  @media(max-width: 1000px) {
+    font-size: 30px;
+
+    p {
+      font-size: 10px;
+    }
+
+    .cr, .cl {
+      font-size: 18px;
+    }
+    h1 .cli {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+  }
+
+  @media(max-width: 700px) {
+
+    h1 {
+      font-size: 20px;
+    }
+
+    p, .cr, .cl {
+      font-size: 13px;
+    }
+    p.cli {
+      font-size: 13px;
+    }
+
+  }
 }
 
 .info-bubble {
-  max-width: 650px;
-  border: 1px solid black;
   padding: 5px 5px 10px;
-  background: white;
+  background: black;
+  color: white;
   position: absolute;
   bottom: -28px;
   left: 0;
+  max-width: 650px;
   p {
     font-size: 20px;
-    font-family: 'Compagnon Light Italic';
   }
 }
 
@@ -256,11 +307,35 @@ body {
       font-size: 19px;
     }
   }
+
+  @media (max-width: 700px) {
+    height: 249px;
+    width: 220px;
+
+    h3 {
+      font-size: 15px;
+    }
+
+    li {
+      font-size: 10px;
+    }
+
+    h2 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
 }
 
 .text-wrapper {
   margin-top: 20px;
   padding: 10px;
+
+  @media(max-width: 700px) {
+    margin-top: 3px;
+  }
 }
 
 .react-draggable-dragging {
@@ -275,6 +350,18 @@ body {
   img {
     max-width: 400px;
     margin-top: 100px;
+  }
+
+  @media(max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+    align-items: center;
+
+    img {
+      max-width: 220px;
+      margin-top: 5px;
+    }
   }
 }
 
@@ -312,5 +399,26 @@ body {
   a:hover {
     background: black;
     color: white;
+  }
+
+  @media(max-width: 1000px) {
+    h3 {
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+
+    h2 {
+      font-size: 15px;
+      color: black;
+      background: unset;
+    }
+
+    .footer-text p {
+      font-size: 11px;
+    }
   }
 }

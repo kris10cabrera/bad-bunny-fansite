@@ -4,7 +4,6 @@ import text from '../text.json'
 import '../App.scss';
 import Word from './Word';
 import Intro from './Intro';
-import Draggable from 'react-draggable';
 
 class App extends React.Component {
   state = {
@@ -42,7 +41,7 @@ class App extends React.Component {
 
 
     /*
-    2 -- this is the big retutrn
+    2 -- this is the big return
     Create a new object that counts how often each word is used
     send that object to sort it
     function adapted from https://www.developintelligence.com/blog/2016/10/finding-the-most-frequent-string-in-a-javascript-array/
@@ -121,8 +120,7 @@ class App extends React.Component {
   }
 
   render() {
-
-
+    const screenWidth = window.screen.width;
     const { data, language, text } = this.state;
     return (
       <>
@@ -144,21 +142,33 @@ class App extends React.Component {
 
               </div>
             </div>
-
           </section>
           <section className="right">
             <Intro text={text} language={language} />
             <section className="folder-wrapper">
               {Object.keys(data).map(function (key, index) {
-                return <Word key={key} index={index * 35} title={data[key].key} times={data[key].value} songs={data[key].songIds} />;
+                return <Word key={key} index={screenWidth > 1300 ? index * 35 : index * -2} title={data[key].key} times={data[key].value} songs={data[key].songIds} screenWidth={screenWidth}/>;
               })}
             </section>
           </section>
         </section>
 
         <section className="wrapper">
-          <h2 className="bt">What is this? </h2>
+        <div className="footer cr">
+          <div className="footer-text-wrapper">
+          <div className="footer-text">
+                <h2><span className="cli">made by</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+                <p>lyrics belong to Bad Bunny. Images belong to Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
+              </div>
+              <h3 className="bt">how?</h3>
+              <p className="cl">
+                this site is built with React. I fed the app a JSON file (lyrics copied & pasted from Genius). I then built a few functions that count each unique word, check for the most frequent words, and identify the songs those words are featured on. highlighted here are some of my favorites. 
+              </p>
+          </div>
+            </div>
+            <img src="stillz-bb.png" alt="Bad Bunny polaroid. credit to Stillz" />
         </section>
+        
       </>
     )
   }

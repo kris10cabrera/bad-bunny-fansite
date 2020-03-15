@@ -79,9 +79,9 @@ a {
   }
 }
 
-
-$bg-color: #DDD8F4;
-
+html {
+  background: linear-gradient(#DDD8F4, #fff) no-repeat;
+}
 
 @font-face {
   font-family: 'Buffon Regular';
@@ -128,7 +128,6 @@ $bg-color: #DDD8F4;
 }
 
 body {
-  background-color: $bg-color;
   font-family: 'Compagnon Light';
 }
 
@@ -139,7 +138,7 @@ body {
 }
 
 .page-wrapper {
-  margin: 50px;
+  margin: 20px 50px;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-column-gap: 40px;
@@ -162,12 +161,35 @@ body {
   }
 
   h1 {
+    position: relative;
     .cli {
       margin-left: -20px;
       margin-right: -20px;
     }
   }
 
+  p.cli {
+    font-size: 15px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+.info-bubble {
+  max-width: 650px;
+  border: 1px solid black;
+  padding: 5px 5px 10px;
+  background: white;
+  position: absolute;
+  bottom: -28px;
+  left: 0;
+  p {
+    font-size: 20px;
+    font-family: 'Compagnon Light Italic';
+  }
 }
 
 .intro::selection {
@@ -217,6 +239,23 @@ body {
   li {
     font-size: 18px;
   }
+
+  @media(max-width: 1050px) {
+    height: 249px;
+    width: 330px;
+
+    h3 {
+      font-size: 30px;
+    }
+
+    li {
+      font-size: 12px;
+    }
+
+    h2 {
+      font-size: 19px;
+    }
+  }
 }
 
 .text-wrapper {
@@ -224,20 +263,54 @@ body {
   padding: 10px;
 }
 
-.footer {
-  border: 1px solid;
-  border-color: #767676;
-  background: #fff;
-  padding: 20px;
-}
-
 .react-draggable-dragging {
   filter: drop-shadow(rgb(0, 255, 31) 2px 4px 6px);
 }
 
 .wrapper {
-  margin: 50px;
+  margin: 44px 50px 50px ;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-
+  img {
+    max-width: 400px;
+    margin-top: 100px;
+  }
 }
 
+.footer-text-wrapper {
+  max-width: 600px;
+
+  h2 {
+    font-size: 30px;
+    background: black;
+    color: white;
+    padding-bottom: 10px;
+    display: inline-block;
+    a:hover {
+      background: white;
+      color: black;
+    }
+  }
+
+  .footer-text p {
+    line-height: 1.2;
+    font-size: 15px;
+  }
+
+  h3 {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-size: 40px;
+    
+  }
+  p {
+    font-size: 23px;
+    line-height: 1.2;
+  }
+
+  a:hover {
+    background: black;
+    color: white;
+  }
+}

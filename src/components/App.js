@@ -1,5 +1,6 @@
 import React from 'react';
 import data from '../yhlqmdlg.json';
+import text from '../text.json'
 import '../App.scss';
 import Word from './Word';
 import Intro from './Intro';
@@ -7,7 +8,15 @@ import Intro from './Intro';
 class App extends React.Component {
   state = {
     data: data,
+    language: 'English',
+    text: {...text}
   }
+  changeLanguage = (language) => {
+    this.setState({
+      language: language
+    })
+  }
+
 
   componentDidMount() {
     const selectedWords = [103, 102, 101, 99, 98, 59, 50, 38, 29, 8];
@@ -109,26 +118,33 @@ class App extends React.Component {
       data: newData
     })
   }
-  handleClick = (e, data) => {
-    this.setState({
-      language: 'Spanish'
-    })
-  }
 
   render() {
-
     const screenWidth = window.screen.width;
-    const { data } = this.state;
-    
-
+    const { data, language, text } = this.state;
     return (
       <>
+        <nav id="language">
+          <ul>
+            <li><abbr className={language == 'English' && 'dotted'} onClick={() => this.changeLanguage('English')} lang="en" title="English">English</abbr></li>
+            <li><abbr className={language == 'Español' && 'dotted'} onClick={() => this.changeLanguage('Español')} lang="es" title="Español">Español</abbr></li>
+          </ul>
+        </nav>
         <section className="page-wrapper">
           <section className="left">
             <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. source: Spotify" />
+
+            <div className="footer cr">
+              <div className="footer-text">
+                
+                <h2><span className="cli">{language == 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+              this is a fan site. lyrics belong to Bad Bunny.
+
+              </div>
+            </div>
           </section>
           <section className="right">
-            <Intro ted={data} />
+            <Intro text={text} language={language} />
             <section className="folder-wrapper">
               {Object.keys(data).map(function (key, index) {
                 return <Word key={key} index={screenWidth > 1300 ? index * 35 : index * -2} title={data[key].key} times={data[key].value} songs={data[key].songIds} screenWidth={screenWidth}/>;

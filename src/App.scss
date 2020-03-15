@@ -64,12 +64,18 @@ a {
     flex-direction: row;
     background: black;
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     justify-content: space-between;
+    padding: 2px 5px 0 5px;
   }
 
   abbr {
+    text-decoration: none;
     cursor: pointer;
+    &.dotted {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
   }
 }
 

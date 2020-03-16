@@ -325,7 +325,7 @@ body {
     width: 220px;
 
     h3 {
-      font-size: 15px;
+      font-size: 19px;
     }
 
     li {
@@ -336,7 +336,7 @@ body {
       font-size: 15px;
     }
     p {
-      font-size: 12px;
+      font-size: 15px;
     }
   }
 }
@@ -426,7 +426,7 @@ body {
 
   @media(max-width: 1000px) {
     h3 {
-      font-size: 20px;
+      font-size: 30px;
       margin-top: 20px;
     }
 
@@ -461,6 +461,7 @@ body {
 
 .closer {
   font-size: 20px;
+  line-height: 1.2;
   @media(max-width: 700px) {
     font-size: 14px;
     margin-top: 10px;
@@ -469,7 +470,7 @@ body {
 }
 
 .mobile-credits {
-  margin: 24px 20px;
+  margin: 24px 20px 30px 20px;
   text-align: center;
   @media(min-width: 700px) {
     display: none;

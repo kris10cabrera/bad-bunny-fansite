@@ -90,7 +90,7 @@ a {
 }
 
 html {
-  background: linear-gradient(180deg, #F1EEFF 0%, #FFFFFF 82.61%, #FFFFFF 82.62%, rgba(255, 255, 255, 0) 82.63%), no-repeat;
+  background: linear-gradient(180deg, #dfd8ff 0%, #FFFFFF 82.61%, #FFFFFF 82.62%, rgba(255, 255, 255, 0) 82.63%), no-repeat;
 }
 
 @font-face {
@@ -183,6 +183,7 @@ body {
   }
 
   @media(max-width: 700px) {
+    display: none;
     margin-top: 200px;
     h2 {
       font-size: 25px;
@@ -213,7 +214,7 @@ body {
   }
 
   p.cli {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   a {
@@ -257,7 +258,11 @@ body {
 
 .folder-wrapper {
   position: relative;
-  margin-top: 40px;
+
+  @media(min-width: 700px) {
+    margin-top: 40px;
+  }
+  margin-top: 20px;
 }
 
 .word-folder {
@@ -379,6 +384,7 @@ body {
 
   @media(max-width: 700px) {
     align-items: center;
+    margin-top: 190px;
   }
 }
 
@@ -458,5 +464,25 @@ body {
     font-size: 14px;
     margin-top: 10px;
     text-align: center;
+  }
+}
+
+.mobile-credits {
+  margin: 24px 20px;
+  text-align: center;
+  @media(min-width: 700px) {
+    display: none;
+  }
+  .bad-bunny {
+    max-width: 220px;
+  }
+  h2 {
+    font-size: 25px;
+    text-align: left;
+  }
+
+  p {
+    text-align: left;
+    font-size: 15px;
   }
 }

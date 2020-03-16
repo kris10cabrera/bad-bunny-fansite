@@ -164,6 +164,14 @@ class App extends React.Component {
             <img src="stillz-bb.png" alt="Bad Bunny polaroid. credit to Stillz" />
             <p className="vg closer">{language === 'English' ? 'listen to' : 'eschucha a'} YHLQMDLG on <a href="https://open.spotify.com/album/5lJqux7orBlA1QzyiBGti1">Spotify</a>, <a href="https://music.apple.com/us/album/yhlqmdlg/1500776322?ls=1">Apple Music</a>, <a href="https://www.youtube.com/playlist?list=PLRW7iEDD9RDS2irjCFJo7dkcswBaJZXGG">YouTube</a>, <a href="https://tidal.com/browse/album/132672298">Tidal</a> 🖤</p>
         </section>
+
+        <section className="mobile-credits">
+        <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. source: Spotify" />
+            <div className="footer-text footer-text-left">
+                <h2><span className="cli">{language === 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+                <p>{language === 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
+              </div>
+        </section>
         
       </>
     )

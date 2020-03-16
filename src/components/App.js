@@ -155,8 +155,8 @@ class App extends React.Component {
                 <h2><span className="cli">{language === 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
                 <p>{language === 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
               </div>
-            <h3 className="bt">{language === 'English' ? 'how?' : '¿cómo?'}</h3>
-              <p className="cl">
+            <h3 className="br">{language === 'English' ? 'how?' : '¿cómo?'}</h3>
+              <p className="cr">
               {language === 'English' ? text.text[5].en : text.text[5].es }
               </p>
           </div>
@@ -169,7 +169,7 @@ class App extends React.Component {
         <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. source: Spotify" />
             <div className="footer-text footer-text-left">
                 <h2><span className="cli">{language === 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
-                <p>{language === 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
+                <p className="cr">{language === 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
               </div>
         </section>
         

@@ -22,7 +22,7 @@
     },
     {
       "en": "this site is built with React. I fed the app a JSON file (lyrics copied & pasted from Genius). I then built a few functions that count each unique word, check for the most frequent words, and identify the songs those words are featured on. highlighted here are some of my favorites. ",
-      "es": "este sitio está construido con react. di al app un JSON file (letras copiaron y pegados de Genius). Después construí unas funciones que cuentan cada palabra única, comproban la palabras más frecuentes, y identifiqué las canciones en las que se presentan esas palabras. aquí están los resultados."
+      "es": "este sitio está construido con react. di al app un JSON file (letras copiaron y pegados de Genius). Después construí unas funciones que cuentan cada palabra única, cuentan las palabras más frecuentes, y identifiqué las canciones en las que se presentan esas palabras. aquí están los resultados."
     },
     {
       "en": "I taught my computer to count the words on",

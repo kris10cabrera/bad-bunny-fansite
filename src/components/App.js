@@ -134,7 +134,7 @@ class App extends React.Component {
           <section className="left">
             <img className="bad-bunny" src="hablamosmanana_source.png" alt="Bad Bunny with a cowboy hat. source: Spotify" />
             <div className="footer-text footer-text-left">
-                <h2><span className="cli">{language === 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+                <h2><span className="cli">{language === 'English' ? 'made by' : 'hecho por' }</span> <a href="https://kristencabrera.com" className="cr">kris10cabrera</a></h2>
                 <p>{language === 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
               </div>
           </section>

@@ -152,7 +152,7 @@ class App extends React.Component {
         <div className="footer cr">
           <div className="footer-text-wrapper">
           <div className="footer-text footer-text-right">
-                <h2><span className="cli">{language === 'English' ? 'made by' : 'hecho por' }</span> <a href="https://twitter.com/kris10cabrera" className="cr">kris10cabrera</a></h2>
+                <h2><span className="cli">{language === 'English' ? 'made by' : 'hecho por' }</span> <a href="https://kristencabrera.com" className="cr">kris10cabrera</a></h2>
                 <p>{language === 'English' ? text.text[4].en : text.text[4].es} Spotify & <a href="https://www.instagram.com/stillz/">@stillz</a>.</p>
               </div>
             <h3 className="br">{language === 'English' ? 'how?' : '¿cómo?'}</h3>
